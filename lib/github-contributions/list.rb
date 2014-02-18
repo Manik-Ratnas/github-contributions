@@ -1,8 +1,8 @@
 require 'github_api'
 
 module Github
-  module contributions   
-    class Github::contributions::List
+  module Contributions   
+    class Github::Contributions::List
       attr_reader :connection,:current_user
       def initialize connection,current_user, options = {}
         @current_user=current_user
