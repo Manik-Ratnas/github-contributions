@@ -1,5 +1,5 @@
 module Github
-  module contributions   
-    VERSION = "0.5.0"
+  module Contributions   
+    VERSION = "0.3.2"
   end
 end
