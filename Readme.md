@@ -1,4 +1,3 @@
-
 # Github Contributions 
 
 This Gem is used to find User Contributions list
@@ -51,6 +50,6 @@ github-contributions this is complete, you should be able to run the test suite:
 
 ### Bug Reporting
 
-Please use the [Issues](https://github.com/githubissues-port/githubissues-port/issues) page to report bugs or suggest new enhancements.
+Please use the Issues page to report bugs or suggest new enhancements.
 
 
