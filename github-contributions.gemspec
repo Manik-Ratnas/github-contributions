@@ -5,11 +5,11 @@ require 'github-contributions/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "github-contributions"
-  spec.version       = Github::contributions::VERSION
+  spec.version       = Github::Contributions::VERSION
   spec.authors       = ["Ramtin Vaziri", "Manish puri", "Hemali Jain","Amruta Das","Arpit Kulshrestha"]
   spec.description   = %q{Find your contribution in github in Ruby.}
   spec.summary       = %q{github-contributions is a Ruby gem that facilittes easy fetching of repositories you have contributed to.}
-  spec.homepage      = "https://github.com/github-contributions/githubissues-contributions"
+  spec.homepage      = "https://github.com/Manik-Ratna/github-contributions"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
