@@ -12,8 +12,8 @@ module Github
 
       def find_list_of_orgs
         @repos_org=Array.new()
-        @repos_ind=Array.new()
-        @matched=Array.new()
+        @repos_contributions=Array.new()
+        @your_contri=Array.new()
         @orgs=@connection.orgs.list.map(&:login)
         @orgs.each do |org|
           self.find_repo_of_org(org)
@@ -21,6 +21,7 @@ module Github
       end
 
       def find_repo_of_org(org)
+        @repos_org.push(@connection.repos.all(auto_pagination:true).map(&:name)
         @repos_org.push(@connection.repos.list(auto_pagination: true,user:org).map(&:name))
         @repos_org.each do |repos|
           repos.each do |repo|
@@ -30,19 +31,12 @@ module Github
       end
 
       def find_contributors(org,repo)
-        @repos_indi=@connection.repos.contributors(auto_pagination: true,repo:repo,anon:1,user:org).map(&:login) rescue []
-        @repos_user=@connection.repos.all
-        if @repos_user.include? @current_user
+        @repos_contributions=@connection.repos.contributors(auto_pagination: true,repo:repo,anon:1,user:org).map(&:login) rescue []
+        if @repos_contributions.include? @current_user
           combo=org+"/"+repo
-          @repos_ind.push(combo)
-        
+          @your_contri.push(combo)
         end
-
-        if @repos_indi.include? @current_user
-          combo=org+"/"+repo
-          @repos_ind.push(combo)
-        end
-     @repos_ind
+        @your_contri
       end
     end
   end
