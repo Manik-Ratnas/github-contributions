@@ -3,7 +3,7 @@ require 'github-contributions/list'
 
 
 module Github
-  module contributions 
+  module Contributions 
     # Your code goes here...
   end
 end
