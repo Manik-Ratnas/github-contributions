@@ -21,7 +21,7 @@ module Github
       end
 
       def find_repo_of_org(org)
-        @repos_org.push(@connection.repos.all(auto_pagination:true).map(&:name)
+        @repos_org.push(@connection.repos.all(auto_pagination:true).map(&:name))
         @repos_org.push(@connection.repos.list(auto_pagination: true,user:org).map(&:name))
         @repos_org.each do |repos|
           repos.each do |repo|
