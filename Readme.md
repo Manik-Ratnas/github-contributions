@@ -28,7 +28,7 @@ github-contributions can simply import or export issues from an Excel file.:
     
     # The List Module will fetch all the repositories to which you have contributed.
 
-    Github::Contributions::List.new(connection,your_github_username)
+    Github::Contributions::List.new(connection,your_github_username).list
     
 ### Contributing
 
