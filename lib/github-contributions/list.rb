@@ -18,7 +18,10 @@ module Github
         @repos_org=Array.new()
         @repos_contributions=Array.new()
         @your_contri=Array.new()
-        @orgs=@connection.orgs.list.map(&:login)
+        @orgs =Array.new()
+        @orgs.push(@current_user)
+        @orgs.push(@connection.orgs.list.map(&:login))
+        @orgs=@orgs.flatten.compact
         results = []
         @orgs.collect do |org|
           results << self.find_repo_of_org(org)
@@ -43,6 +46,9 @@ module Github
         if @repos_contributions.include? @current_user
           combo=org+"/"+repo
           @your_contri.push(combo)
+        end
+        if @your_contri.nil?
+          @your_contri="No Contribution"
         end
         @your_contri
       end
